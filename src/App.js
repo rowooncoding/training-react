@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function App() {
   const [toDo, setTodo] = useState("");
+  const [toDos, setTodos] = useState([]);
   const onChange = (e) => setTodo(e.target.value);
   const onSubmit = (e) => {
     e.preventDefault();
@@ -9,9 +10,11 @@ function App() {
       return;
     }
     setTodo("");
+    setTodos((currentArray) => [toDo, ...currentArray]);
   };
   return (
     <div>
+      <h1>My to Dos</h1>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
