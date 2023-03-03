@@ -10,12 +10,32 @@ function App() {
       )
     ).json();
     setMovies(json.data.movies);
-    setMovies(false);
+    setLoading(false);
   };
   useEffect(() => {
     getMovies();
   }, []);
-  return <div>{loading ? <h1>Loading...</h1> : null}</div>;
+  return (
+    <div>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <h2>{movie.title}</h2>
+              <p>{movie.summary}</p>
+              <ul>
+                {movie.genres.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
