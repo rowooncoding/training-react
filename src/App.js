@@ -3,15 +3,21 @@ import { useState } from "react";
 function App() {
   const [toDo, setTodo] = useState("");
   const onChange = (e) => setTodo(e.target.value);
-  console.log(toDo);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(toDo);
+  };
   return (
     <div>
-      <input
-        onChange={onChange}
-        value={toDo}
-        type="text"
-        placeholder="Write your to do..."
-      />
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          value={toDo}
+          type="text"
+          placeholder="Write your to do..."
+        />
+        <button>Add To Do</button>
+      </form>
     </div>
   );
 }
