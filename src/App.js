@@ -5,7 +5,10 @@ function App() {
   const onChange = (e) => setTodo(e.target.value);
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(toDo);
+    if (toDo === "") {
+      return;
+    }
+    setTodo("");
   };
   return (
     <div>
