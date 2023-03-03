@@ -1,4 +1,6 @@
 # 학습 목록
-[ v ] todo list 
-[ v ] coin tracker
-[ v ] movie app
+## 상세
+
+[ v ] todo list <br>
+[ v ] coin tracker <br>
+[ v ] movie app <br>
