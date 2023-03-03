@@ -12,6 +12,7 @@ function App() {
     setTodo("");
     setTodos((currentArray) => [toDo, ...currentArray]);
   };
+  console.log(toDos);
   return (
     <div>
       <h1>My to Dos</h1>
